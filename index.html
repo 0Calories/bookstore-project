@@ -4,47 +4,100 @@
     <head>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
         <style type="text/css">
 
             html, body {
                 height: 100%;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
             }
 
             #pageHeader {
-                border: solid black 1px;
-                width: 100%;
-                height: 20%;
+                height: 15%;
+                background: #2195F2;
+                -webkit-box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
+                -moz-box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
+                box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
             }
 
             #bookContainer {
-                border: solid black 1px;
-                width: 100%;
-                height: 80%;
+                height: 85%;
+            }
+
+            #logoContainer {
+                float: left;
+                margin-left: 10px;
+                margin-top: 12px;
+                width: 100px;
+                height: 100px;
+            }
+
+            #logoTextContainer {
+                margin-top: 20px;
+                font-family: 'Righteous', cursive;
+                font-size: 48px;
+                color: #ffffff;
+                margin-right: 150px;
+            }
+
+            #searchContainer {
+                margin-top: 35px;
+            }
+
+            #searchCategory {
+                float: left;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                padding: 5px;
+                border-color: #b7b7b7;
+                height: 40px;
+                background: #ededed;
+                color: #8c8c8c;
+            }
+
+            #searchCategory:hover {
+                background: #d8d8d8;
             }
 
             #searchBar {
-                margin-right: none;
                 float: left;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 2px;
+                color: #111111;
             }
 
             #searchButton {
-                border: none;
                 float: left;
-                -webkit-border-radius: 8;
-                -moz-border-radius: 8;
-                border-radius: 8px;
+                border: none;
+                -webkit-border-radius: 4;
+                -moz-border-radius: 4;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
                 font-family: Arial;
                 color: #ffffff;
                 font-size: 20px;
                 padding: 5px;
-                background: #3498db;
+                background: #FE5252;
                 text-decoration: none;
-                margin-left: 10px;
+                width: 50px;
+                height: 40px;
+                outline: none;
             }
 
             #searchButton:hover {
-                background: #3cb0fd;
+                background: #ff3838;
                 text-decoration: none;
+            }
+
+            .fittedImage {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .categoryOption {
+                background: #ffffff;
+                color: #000000;
             }
 
         </style>
@@ -55,18 +108,39 @@
 
     <body>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        <div id="pageHeader">
-            <form>
-                <input type="text" id="searchBar" />
-                <input type="submit" id="searchButton" />
-            </form>
+        <div id="pageHeader" class="container-fluid">
+
+            <div id="headerContent" class="row justify-content-start">
+
+                <span class="text-nowrap">
+                    <div id="logoWrapper" class="col-2">
+                        <div id="logoContainer">
+                            <img src="res/owl-logo-white.png" class="fittedImage" />
+                        </div>
+                        <div id="logoTextContainer" class="clearfix">OWL</div>
+                    </div>
+                </span>
+
+
+                <form id="searchContainer" class="row col-8">
+                    <select id="searchCategory">
+                        <option value="title" class="categoryOption">Title</option>
+                        <option value="keyword" class="categoryOption">Keyword</option>
+                        <option value="author" class="categoryOption">Author</option>
+                    </select>
+                    <input type="text" id="searchBar" class="col 8"/>
+                    <button type="submit" id="searchButton"><img src="res/mag-icon-small.png" class="fittedImage" /></button>
+                </form>
+            </div>
+
         </div>
 
-        <div id="bookContainer">
-            test
+        <div id="bookContainer" class="container-fluid">
+
         </div>
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </html>
