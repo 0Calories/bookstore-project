@@ -10,14 +10,18 @@
             html, body {
                 height: 100%;
                 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                min-width: 700px;
+                overflow-x: auto;
             }
 
             #pageHeader {
-                height: 15%;
+                min-height: 22%;
+                width: 100%;
                 background: #2195F2;
                 -webkit-box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
                 -moz-box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
                 box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
+                padding-bottom: 20px;
             }
 
             #bookContainer {
@@ -41,7 +45,8 @@
             }
 
             #searchContainer {
-                margin-top: 35px;
+                float: left;
+                width: 60%;
             }
 
             #searchCategory {
@@ -53,6 +58,8 @@
                 height: 40px;
                 background: #ededed;
                 color: #8c8c8c;
+                border-top: none;
+                border-bottom: none;
             }
 
             #searchCategory:hover {
@@ -62,9 +69,11 @@
             #searchBar {
                 float: left;
                 height: 40px;
+                width: 50%;
                 padding-left: 10px;
                 padding-right: 2px;
                 color: #111111;
+                border: none;
             }
 
             #searchButton {
@@ -112,24 +121,32 @@
 
             <div id="headerContent" class="row justify-content-start">
 
-                <span class="text-nowrap">
-                    <div id="logoWrapper" class="col-2">
+                <div id="logoWrapper" class="">
+                    <span class="text-nowrap">
                         <div id="logoContainer">
                             <img src="res/owl-logo-white.png" class="fittedImage" />
                         </div>
                         <div id="logoTextContainer" class="clearfix">OWL</div>
+                    </span>
+                </div>
+
+
+                <form id="searchContainer" class="form-inline">
+                    <div class="form-group" style="width: 100%">
+                        <div class="input-group" style="width: 100%">
+                            <select id="searchCategory">
+                                <option value="title" class="categoryOption">Title</option>
+                                <option value="keyword" class="categoryOption">Keyword</option>
+                                <option value="author" class="categoryOption">Author</option>
+                            </select>
+                            <input id="searchBar" class="form-control" type="text" />
+                            <span class="input-group-btn">
+                                <button type="submit" id="searchButton"><img src="res/mag-icon-small.png" class="fittedImage" /></button>
+                            </span>
+                        </div>
+
                     </div>
-                </span>
 
-
-                <form id="searchContainer" class="row col-8">
-                    <select id="searchCategory">
-                        <option value="title" class="categoryOption">Title</option>
-                        <option value="keyword" class="categoryOption">Keyword</option>
-                        <option value="author" class="categoryOption">Author</option>
-                    </select>
-                    <input type="text" id="searchBar" class="col 8"/>
-                    <button type="submit" id="searchButton"><img src="res/mag-icon-small.png" class="fittedImage" /></button>
                 </form>
             </div>
 
