@@ -15,13 +15,12 @@
             }
 
             #pageHeader {
-                
                 width: 100%;
                 background: #2195F2;
                 -webkit-box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
                 -moz-box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
                 box-shadow: 0px 5px 5px 2px rgba(181,181,181,0.83);
-                padding-bottom: 20px;
+                padding-bottom: 10px;
             }
 
             #bookContainer {
@@ -38,10 +37,11 @@
 
             #logoTextContainer {
                 margin-top: 20px;
-                font-family: 'Righteous', cursive;
-                font-size: 48px;
                 color: #ffffff;
                 margin-right: 150px;
+                font-family: 'Righteous', cursive;
+                font-size: 48px;
+                cursor: default;
             }
 
             #searchContainer {
@@ -64,6 +64,7 @@
 
             #searchCategory:hover {
                 background: #d8d8d8;
+                cursor: pointer;
             }
 
             #searchBar {
@@ -97,6 +98,13 @@
             #searchButton:hover {
                 background: #ff3838;
                 text-decoration: none;
+                cursor: pointer;
+            }
+
+            #categoriesContainer {
+                font-family: 'Righteous', cursive;
+                font-size: 20px;
+                color: #ffffff;
             }
 
             .fittedImage {
@@ -107,6 +115,16 @@
             .categoryOption {
                 background: #ffffff;
                 color: #000000;
+            }
+
+            .categoryLink {
+                margin-right: 40px;
+            }
+
+            .categoryLink:hover {
+                color: #ff3838;
+                border-bottom: solid 2px #ff3838;
+                cursor: pointer;
             }
 
         </style>
@@ -148,6 +166,15 @@
                     </div>
 
                 </form>
+            </div>
+
+            <div id="categoriesContainer" style="text-align: center">
+                <span class="categoryLink">Fiction</span>
+                <span class="categoryLink">Non-Fiction</span>
+                <span class="categoryLink">Science</span>
+                <span class="categoryLink">Health</span>
+                <span class="categoryLink">Kids</span>
+                <span class="categoryLink">Teens</span>
             </div>
 
         </div>
