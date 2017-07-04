@@ -3,6 +3,7 @@ html, body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     min-width: 700px;
     overflow-x: auto;
+    background: #F9F9F9;
 }
 
 #pageHeader {
@@ -21,7 +22,7 @@ html, body {
 
 #logoContainer {
     float: left;
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 12px;
     width: 100px;
     height: 100px;
@@ -94,10 +95,12 @@ html, body {
 }
 
 #categoriesContainer {
-    font-family: 'Righteous', cursive;
+    font-family: 'Arimo', sans-serif;
     font-size: 20px;
     color: #ffffff;
+    text-align: center;
 }
+
 
 .fittedImage {
     max-width: 100%;
@@ -124,26 +127,59 @@ html, body {
 }
 
 .bookGroupHeader {
-    font-family: 'Righteous', cursive;
-    font-size: 34px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 30px;
     color: #212121;
-    margin-top: 20px;
-    border: 1px solid black;
-    background: #ededed;
-    border-color: #b7b7b7;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px solid #b7b7b7;
+    background: #ffffff;
     -webkit-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
-    -moz-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);;
+    -moz-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
+    box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
+    padding-left: 20px;
+}
+
+.cardContainer {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    color: #212121;
+    border: 1px solid #b7b7b7;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
+    box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
+    padding-left: 20px;
+}
+
+.boxShadow {
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
     box-shadow: 0px 0px 5px 2px rgba(181,181,181,0.83);
 }
 
 .bookSlider {
     margin: 0 auto;
-    max-width: 70%;
+    max-width: 80%;
     margin-bottom: 20px;
 }
 
-
-
 .arrow {
     font-family: FontAwesome; font-size: 40px; line-height: 1; color: red; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: "\f053";
+}
+
+.addToCart {
+    background: #FE5252;
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.addToCart:hover {
+    background: #ff3838;
+    cursor: pointer;
 }

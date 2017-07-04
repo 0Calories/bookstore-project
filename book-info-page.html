@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+        <meta charset="UTF-8">
+        <title>Owl Book Store: Tunnels</title>
+
+        <style type="text/css">
+            #bookDisplay {
+                margin-top: 20px;
+                margin-left: 20px;
+                width: 250px;
+                height: 400px;
+            }
+
+            #bookInfoBox {
+                margin-top: 20px;
+                margin-left: 20px;
+                padding: 10px;
+                width: 250px;
+                border: 1px solid #b7b7b7;
+                border-radius: 8px;
+            }
+
+            #bookPriceBox {
+                margin-top: 5%;
+                margin-left: 20px;
+                border: 1px solid black;
+                padding: 10px;
+                height: 50%;
+                border: 1px solid #b7b7b7;
+                border-radius: 8px;
+            }
+
+            #relatedBooksBox {
+                margin: 20px;
+            }
+
+            #bookWrapper {
+
+            }
+
+            .bookDiv {
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="pageHeader" class="container-fluid">
+
+            <div id="headerContent" class="row justify-content-start">
+
+                <div id="logoWrapper" style="cursor: pointer;" onclick="window.location='index.html';">
+                    <span class="text-nowrap">
+                        <div id="logoContainer">
+                            <img src="res/owl-logo-white.png" class="fittedImage" />
+                        </div>
+                        <div id="logoTextContainer" class="clearfix" style="cursor: pointer;">OWL</div>
+                    </span>
+                </div>
+
+
+                <form id="searchContainer" class="form-inline" action="index.html">
+                    <div class="form-group" style="width: 100%">
+                        <div class="input-group" style="width: 100%">
+                            <select id="searchCategory">
+                                <option value="title" class="categoryOption">Title</option>
+                                <option value="keyword" class="categoryOption">Keyword</option>
+                                <option value="author" class="categoryOption">Author</option>
+                            </select>
+                            <input id="searchBar" class="form-control" type="text" />
+                            <span class="input-group-btn">
+                                <button type="submit" id="searchButton"><img src="res/mag-icon-small.png" class="fittedImage" /></button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="categoriesContainer">
+                <span class="categoryLink">Fiction</span>
+                <span class="categoryLink">Non-Fiction</span>
+                <span class="categoryLink">Science</span>
+                <span class="categoryLink">Health</span>
+                <span class="categoryLink">Kids</span>
+                <span class="categoryLink">Teens</span>
+            </div>
+
+        </div>
+
+        <div id="bookContainer" class="container-fluid">
+
+            <div id="bookInfoRow" class="row cardContainer">
+                <div id="bookDisplay" class="boxShadow">
+                    <img src="res/books/tunnels.jpg" style="width: 100%; height: 100%"/>
+                </div>
+
+                <div id="bookInfoBox" class="col-7">
+                    <h4><strong>Tunnels: A Novel</strong></h4>
+                    <p>by <i>Roderick Gordon, Brian Williams</i></p>
+                    <p>Fourteen-year-old Will Burrows has little in common with his strange, dysfunctional family.
+                        In fact, the only bond he shares with his eccentric father is a passion for archaeological excavation.
+                        So when his dad mysteriously vanishes, Will is compelled to dig up the truth behind his disappearance.
+                        He unearths the unbelievable: a subterranean society that time forgot.
+                        "The Colony" has existed unchanged for a century, but it's no benign time capsule of a bygone era.
+                        Because the Colony is ruled by a merciless overclass, the Styx.
+                        Will must free his father—but is he also about to ignite a revolution?
+                    </p>
+                </div>
+
+                <div id="bookPriceBox" class="col-2">
+                    <p><strong>FREE Shipping Available</strong></p>
+                    <p><strong>Paperback</strong></h4>
+                    <h4><strong>$8.99</strong></h4>
+                    <div class="addToCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</div>
+                </div>
+            </div>
+
+            <div id="relatedBooksBox">
+                <div>
+                    <h4><strong>Related Books</strong></h4>
+                </div>
+                <div id="bookWrapper">
+                    <div class="bookDiv"><a href="book-info-page.html"><img src="res/books/maze-runner.jpg" /></a></div>
+                    <div class="bookDiv"><a href="book-info-page.html"><img src="res/books/hunger-games.jpg" /></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript">
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        $(".addToCart").click(function() {
+            toastr["success"]("This book has been added to your cart.", "Success!");
+        })
+
+        </script>
+
+    </body>
+
+</html>

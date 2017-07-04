@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css"/>
@@ -20,17 +21,17 @@
 
             <div id="headerContent" class="row justify-content-start">
 
-                <div id="logoWrapper" class="">
+                <div id="logoWrapper" style="cursor: pointer;" onclick="window.location='index.html';">
                     <span class="text-nowrap">
                         <div id="logoContainer">
                             <img src="res/owl-logo-white.png" class="fittedImage" />
                         </div>
-                        <div id="logoTextContainer" class="clearfix">OWL</div>
+                        <div id="logoTextContainer" class="clearfix" style="cursor: pointer;">OWL</div>
                     </span>
                 </div>
 
 
-                <form id="searchContainer" class="form-inline">
+                <form id="searchContainer" class="form-inline" action="index.html">
                     <div class="form-group" style="width: 100%">
                         <div class="input-group" style="width: 100%">
                             <select id="searchCategory">
@@ -49,7 +50,7 @@
                 </form>
             </div>
 
-            <div id="categoriesContainer" style="text-align: center">
+            <div id="categoriesContainer">
                 <span class="categoryLink">Fiction</span>
                 <span class="categoryLink">Non-Fiction</span>
                 <span class="categoryLink">Science</span>
@@ -65,12 +66,12 @@
                 <div class="bookGroupHeader">
                     Bestsellers
                     <div class="bookSlider">
-                        <div><img src="res/books/astrophysics.jpg" /></div>
-                        <div><img src="res/books/maze-runner.jpg" /></div>
-                        <div><img src="res/books/tunnels.jpg" /></div>
-                        <div><img src="res/books/hunger-games.jpg" /></div>
-                        <div><img src="res/books/places-youll-go.jpg" /></div>
-                        <div><img src="res/books/a-man-called-ove.jpg" /></div>
+                        <div><a href="book-info-page.html"><img src="res/books/astrophysics.jpg" /></a></div>
+                        <div><a href="book-info-page.html"><img src="res/books/maze-runner.jpg" /></a></div>
+                        <div><a href="book-info-page.html"><img src="res/books/tunnels.jpg" /></a></div>
+                        <div><a href="book-info-page.html"><img src="res/books/hunger-games.jpg" /></a></div>
+                        <div><a href="book-info-page.html"><img src="res/books/places-youll-go.jpg" /></a></div>
+                        <div><a href="book-info-page.html"><img src="res/books/a-man-called-ove.jpg" /></a></div>
                     </div>
                 </div>
                 <div class="bookGroupHeader">
@@ -85,7 +86,7 @@
                     </div>
                 </div>
                 <div class="bookGroupHeader">
-                    On Sale
+                     On Sale
                     <div class="bookSlider">
                         <div><img src="res/books/astrophysics.jpg" /></div>
                         <div><img src="res/books/maze-runner.jpg" /></div>
