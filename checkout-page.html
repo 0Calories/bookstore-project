@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+        <meta charset="UTF-8">
+        <title>My Cart</title>
+
+        <style type="text/css">
+
+            #formCard {
+                margin: 50px auto;
+            }
+
+            .formField {
+
+            }
+
+            #wrapper {
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            #submitButton {
+                width: 140px;
+                background: #FE5252;
+                border: none;
+                color: #212121;
+                font-weight: bold;
+            }
+
+            #submitButton:hover {
+                background: #ff3838;
+                cursor: pointer;
+            }
+
+            #errorMessage {
+                color: red;
+            }
+
+            #reviewContainer {
+                margin: 50px;
+                text-align: center;
+                height: 50%;
+            }
+
+            input {
+                border: 1px solid #b7b7b7;
+                border-radius: 4px;
+                padding: 5px;
+                margin-bottom: 20px;
+                height: 40px;
+                background: #ededed;
+                color: #212121;
+            }
+
+            .formLabel {
+                width: 200px;
+            }
+
+            .formElement {
+
+            }
+
+            .checkoutButton {
+                background: #FE5252;
+                -webkit-border-radius: 4;
+                -moz-border-radius: 4;
+                border-radius: 4px;
+                margin: 0 auto;
+                font-weight: bold;
+                text-align: center;
+                padding: 8px;
+            }
+
+            .checkoutButton:hover {
+                background: #ff3838;
+                cursor: pointer;
+            }
+
+            .quantityPicker {
+                border: 1px solid #b7b7b7;
+                border-radius: 4px;
+                padding: 5px;
+                margin-bottom: 20px;
+                height: 40px;
+                background: #ededed;
+                color: #8c8c8c;
+                width: 210px;
+            }
+
+            .creditCard {
+                width: 52px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="pageHeader" class="container-fluid">
+
+            <div id="headerContent" class="row justify-content-start">
+
+                <div id="logoWrapper" style="cursor: pointer;" onclick="window.location='index.html';">
+                    <span class="text-nowrap">
+                        <div id="logoContainer">
+                            <img src="res/owl-logo-white.png" class="fittedImage" />
+                        </div>
+                        <div id="logoTextContainer" class="clearfix" style="cursor: pointer;">OWL</div>
+                    </span>
+                </div>
+
+
+                <form id="searchContainer" class="form-inline" action="index.html">
+                    <div class="form-group" style="width: 100%">
+                        <div class="input-group" style="width: 100%">
+                            <select id="searchCategory">
+                                <option value="title" class="categoryOption">Title</option>
+                                <option value="keyword" class="categoryOption">Keyword</option>
+                                <option value="author" class="categoryOption">Author</option>
+                            </select>
+                            <input id="searchBar" class="form-control" type="text" />
+                            <span class="input-group-btn">
+                                <button type="submit" id="searchButton"><img src="res/mag-icon-small.png" class="fittedImage" /></button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div id="headerRight" class="row">
+                    <div>
+                        <p class="headerRightItem">Sign In</p>
+                    </div>
+                    <div>
+                        <p class="headerRightItem">My Account</p>
+                    </div>
+                    <div>
+                        <p class="headerRightItem" ><a href="cart-page.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="categoriesContainer">
+                <span class="categoryLink">Fiction</span>
+                <span class="categoryLink">Non-Fiction</span>
+                <span class="categoryLink">Science</span>
+                <span class="categoryLink">Health</span>
+                <span class="categoryLink">Kids</span>
+                <span class="categoryLink">Teens</span>
+            </div>
+
+        </div>
+
+        <div id="bookContainer" class="container-fluid">
+
+            <div class="row">
+                <div id="formCard" class="cardContainer col-6">
+                    <h4><strong>Shipping Information</strong></h4>
+                    <div class="lineSeparator"></div>
+                    <br />
+                    <div id="wrapper">
+
+                        <div id="errorMessage">
+
+                        </div>
+
+                        <div class="formElement">
+                            <label for="email" class="formLabel">First Name</label>
+
+                            <input type="text" name="firstName" id="firstName" />
+                        </div>
+
+                        <div class="formElement">
+                            <label for="email" class="formLabel">Last Name</label>
+
+                            <input type="text" name="lastName" id="lastName" />
+                        </div>
+
+                        <div class="formElement">
+                            <label for="email" class="formLabel">Email</label>
+
+                            <input type="text" name="email" placeholder="example@email.com" id="email" />
+                        </div>
+
+                        <div class="formElement">
+                            <label for="phone" class="formLabel">Telephone</label>
+
+                            <input type="text" name="phone" placeholder="XXX-XXX-XXXX" id="phone" />
+                        </div>
+
+                        <div class="formElement">
+                            <label for="address" class="formLabel">Shipping Address</label>
+
+                            <input type="text" name="address" id="address" />
+                        </div>
+
+                        <div class="formElement">
+                            <label for="creditCard" class="formLabel">Credit Card</label>
+
+                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            -
+                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            -
+                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            -
+                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                        </div>
+
+                        <div class="formElement">
+                            <label for="quantityPicker" class="formLabel">Shipping Method</label>
+                            <select class="quantityPicker">
+                                <option value="ground" class="categoryOption">Ground Shipping</option>
+                                <option value="heli" class="categoryOption">Helicopter Shipping</option>
+                                <option value="drone" class="categoryOption">Drone Shipping</option>
+                            </select>
+                        </div>
+
+
+                        <div class="formElement">
+                            <input type="submit" value="Complete Order" id="submitButton"/>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="reviewContainer" class="cardContainer col-3">
+                    <h4><strong>Order Summary</strong></h4>
+                    <div class="lineSeparator"></div>
+                    <br />
+                    <p><strong>Subtotal (3 items): <span style="color: #FE5252;">$31.97</span></strong></p>
+                    <p><strong>Estimated Shipping: <span style="color: #FE5252;">FREE</span></strong></p>
+                    <p><strong>Estimated Tax: <span style="color: #FE5252;">$0.00</span></strong></p>
+                    <div class="lineSeparator"></div>
+                    <br />
+                    <h4><strong>Total: <span style="color: #FE5252;">$31.97</span></strong></h4>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+
+        function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
+
+        function isPhone(phoneNumber) {
+            var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            return regex.test(phoneNumber);
+        }
+
+        function isAddress(address) {
+            var regex = /^[a-zA-Z0-9\s,'-]*$/;
+            return regex.test(address);
+        }
+
+        $("#submitButton").click(function() {
+            var errorMessage = "";
+            var fieldsMissing = "";
+
+            if ($("#firstName").val() == "") {
+                fieldsMissing += "<br />First Name missing"
+            }
+
+            if ($("#lastName").val() == "") {
+                fieldsMissing += "<br />Last Name missing"
+            }
+
+            if ($("#email").val() == "") {
+                fieldsMissing += "<br />Email missing"
+            }
+
+            if ($("#phone").val() == "") {
+                fieldsMissing += "<br />Phone number missing"
+            }
+
+            if ($("#address").val() == "") {
+                fieldsMissing += "<br />Shipping Address missing"
+            }
+
+            if ($(".creditCard").val() == "") {
+                fieldsMissing += "<br />Credit Card info missing"
+            }
+
+            if (fieldsMissing != "") {
+                errorMessage += "<p>There are errors with the following fields: </p>" + fieldsMissing;
+            }
+
+            if (!isEmail($("#email").val()) && $("#email").val() != "") {
+                errorMessage += "<p>Invalid Email Address</p>";
+            }
+
+            if (!isPhone($("#phone").val()) && $("#phone").val() != "") {
+                errorMessage += "<p>Invalid Phone Number</p>";
+            }
+
+            if (!isAddress($("#address").val()) && $("#address").val() != "") {
+                errorMessage += "<p>Invalid Shipping Address</p>";
+            }
+
+            if ($(".creditCard").val().length < 4 ) {
+                fieldsMissing += "<br />Invalid Credit Card"
+            }
+
+            $("#errorMessage").html(errorMessage);
+
+            if (errorMessage == "") {
+                alert("Your shipping information has been accepted. Thank you for shopping with Owl Books!");
+            }
+
+        })
+
+        </script>
+
+    </body>
+
+</html>
