@@ -9,7 +9,7 @@
         <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
         <meta charset="UTF-8">
-        <title>My Cart</title>
+        <title>Checkout</title>
 
         <style type="text/css">
 
@@ -118,9 +118,9 @@
                 </div>
 
 
-                <form id="searchContainer" class="form-inline" action="index.html">
+                <form id="searchContainer" class="form-inline row" action="search-page.html">
                     <div class="form-group" style="width: 100%">
-                        <div class="input-group" style="width: 100%">
+                        <div class="input-group" style="width: 80%">
                             <select id="searchCategory">
                                 <option value="title" class="categoryOption">Title</option>
                                 <option value="keyword" class="categoryOption">Keyword</option>
@@ -150,12 +150,12 @@
             </div>
 
             <div id="categoriesContainer">
-                <span class="categoryLink">Fiction</span>
-                <span class="categoryLink">Non-Fiction</span>
-                <span class="categoryLink">Science</span>
-                <span class="categoryLink">Health</span>
-                <span class="categoryLink">Kids</span>
-                <span class="categoryLink">Teens</span>
+                <span class="categoryLink"><a href="category-page.html">Fiction</a></span>
+                <span class="categoryLink"><a href="category-page.html">Non-Fiction</a></span>
+                <span class="categoryLink"><a href="category-page.html">Science</a></span>
+                <span class="categoryLink"><a href="category-page.html">Health</a></span>
+                <span class="categoryLink"><a href="category-page.html">Kids</a></span>
+                <span class="categoryLink"><a href="category-page.html">Teens</a></span>
             </div>
 
         </div>
@@ -206,13 +206,13 @@
                         <div class="formElement">
                             <label for="creditCard" class="formLabel">Credit Card</label>
 
-                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            <input type="text" name="creditCard" class="creditCard" id="creditCard1" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
                             -
-                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            <input type="text" name="creditCard" class="creditCard" id="creditCard2" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
                             -
-                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            <input type="text" name="creditCard" class="creditCard" id="creditCard3" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
                             -
-                            <input type="text" name="creditCard" class="creditCard" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                            <input type="text" name="creditCard" class="creditCard" id="creditCard4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
                         </div>
 
                         <div class="formElement">
@@ -290,7 +290,7 @@
                 fieldsMissing += "<br />Shipping Address missing"
             }
 
-            if ($(".creditCard").val() == "") {
+            if ($("#creditCard").val() == "" || $("#creditCard2").val() == "" || $("#creditCard3").val() == "" || $("#creditCard4").val() == "") {
                 fieldsMissing += "<br />Credit Card info missing"
             }
 
@@ -310,8 +310,9 @@
                 errorMessage += "<p>Invalid Shipping Address</p>";
             }
 
-            if ($(".creditCard").val().length < 4 ) {
-                fieldsMissing += "<br />Invalid Credit Card"
+            if (($("#creditCard1").val().length < 4 || $("#creditCard2").val().length < 4 ||
+            $("#creditCard3").val().length < 4 || $("#creditCard4").val().length < 4)) {
+                errorMessage += "<br />Invalid Credit Card"
             }
 
             $("#errorMessage").html(errorMessage);
@@ -320,7 +321,13 @@
                 alert("Your shipping information has been accepted. Thank you for shopping with Owl Books!");
             }
 
-        })
+        });
+
+        $(".creditCard").keyup(function () {
+            if (this.value.length == this.maxLength) {
+              $(this).next('.creditCard').focus();
+            }
+        });
 
         </script>
 

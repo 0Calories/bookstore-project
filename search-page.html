@@ -7,56 +7,62 @@
         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
         <meta charset="UTF-8">
-        <title>Owl Book Store: Tunnels</title>
+        <title>Owl Books: Roderick Gordon</title>
 
         <style type="text/css">
-            #bookDisplay {
-                margin-top: 20px;
-                margin-left: 20px;
-                width: 250px;
-                height: 400px;
+
+            #cartContainer {
+                margin-top: 40px;
+                margin-left: 40px;
             }
 
-            #bookInfoBox {
-                margin-top: 20px;
-                margin-left: 20px;
-                padding: 10px;
-                width: 250px;
-                border: 1px solid #b7b7b7;
-                border-radius: 8px;
+
+            .cartItem {
+                border-top: 1px solid #b7b7b7;
+                overflow: auto;
             }
 
-            #bookPriceBox {
-                margin-top: 5%;
-                margin-left: 20px;
-                border: 1px solid black;
-                padding: 10px;
-                height: 50%;
-                border: 1px solid #b7b7b7;
-                border-radius: 8px;
-            }
-
-            #relatedBooksBox {
-                margin: 20px;
-            }
-
-            #bookWrapper {
-
-            }
-
-            .bookDiv {
-                margin-top: 20px;
-                margin-right: 20px;
-                margin-bottom: 20px;
+            .itemImage {
+                margin: 20px 0px 20px 20px;
+                width: 150px;
+                height: 220px;
                 float: left;
             }
 
-            .addToCart {
+            .bookImage {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            .itemDetails {
+                margin: 20px 20px;
+                margin-left: 100px;
+            }
+
+            .priceDiv {
+                margin-left: 60px;
+            }
+
+            .quantityPicker {
+                float: left;
+                border-radius: 4px;
+                padding: 5px;
+                border-color: #b7b7b7;
+                height: 40px;
+                background: #ededed;
+                color: #8c8c8c;
+                margin-left: 20px;
+            }
+
+            .quantityPicker:hover {
+                background: #d8d8d8;
+                cursor: pointer;
+            }
+
+            .checkoutButton {
                 background: #FE5252;
                 -webkit-border-radius: 4;
                 -moz-border-radius: 4;
@@ -64,13 +70,13 @@
                 margin: 0 auto;
                 font-weight: bold;
                 text-align: center;
+                padding: 8px;
             }
 
-            .addToCart:hover {
+            .checkoutButton:hover {
                 background: #ff3838;
                 cursor: pointer;
             }
-
 
         </style>
 
@@ -135,80 +141,72 @@
         </div>
 
         <div id="bookContainer" class="container-fluid">
+            <div class="row">
+                <div id="cartContainer" class="col-11">
+                    <h4><strong>Results for "Roderick Gordon"</strong></h4>
+                    <div id="itemsContainer">
 
-            <div id="bookInfoRow" class="row cardContainer">
-                <div id="bookDisplay" class="boxShadow">
-                    <img src="res/books/tunnels.jpg" style="width: 100%; height: 100%"/>
+                        <div class="cartItem">
+                            <div class="itemImage boxShadow"><a href="book-info-page.html"><img class="bookImage" src="res/books/tunnels.jpg" /></a></div>
+                            <div class="itemDetails row">
+                                <ul style="list-style: none;" class="col-4">
+                                    <li><h4><strong>Tunnels</strong></h4></li>
+                                    <li>by <i>Roderick Gordon, Brian Williams</i></li>
+                                    <br />
+                                    <br />
+                                </ul>
+                                <div class="priceDiv col-4">
+                                    <h4><strong>$8.99</strong></h4>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="cartItem">
+                            <div class="itemImage boxShadow"><a href="book-info-page.html"><img class="bookImage" src="res/books/freefall.jpg" /></a></div>
+                            <div class="itemDetails row">
+                                <ul style="list-style: none;" class="col-4">
+                                    <li><h4><strong>Freefall</strong></h4></li>
+                                    <li>by <i>Roderick Gordon, Brian Williams</i></li>
+                                    <br />
+                                    <br />
+                                </ul>
+                                <div class="priceDiv col-4">
+                                    <h4><strong>$8.99</strong></h4>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="cartItem">
+                            <div class="itemImage boxShadow"><a href="book-info-page.html"><img class="bookImage" src="res/books/closer.jpg" /></a></div>
+                            <div class="itemDetails row">
+                                <ul style="list-style: none;" class="col-4">
+                                    <li><h4><strong>Closer</strong></h4></li>
+                                    <li>by <i>Roderick Gordon, Brian Williams</i></li>
+                                    <br />
+                                    <br />
+                                </ul>
+                                <div class="priceDiv col-4">
+                                    <h4><strong>$8.99</strong></h4>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
                 </div>
 
-                <div id="bookInfoBox" class="col-7">
-                    <h4><strong>Tunnels: A Novel</strong></h4>
-                    <p>by <i>Roderick Gordon, Brian Williams</i></p>
-                    <p>Fourteen-year-old Will Burrows has little in common with his strange, dysfunctional family.
-                        In fact, the only bond he shares with his eccentric father is a passion for archaeological excavation.
-                        So when his dad mysteriously vanishes, Will is compelled to dig up the truth behind his disappearance.
-                        He unearths the unbelievable: a subterranean society that time forgot.
-                        "The Colony" has existed unchanged for a century, but it's no benign time capsule of a bygone era.
-                        Because the Colony is ruled by a merciless overclass, the Styx.
-                        Will must free his father—but is he also about to ignite a revolution?
-                    </p>
-                </div>
-
-                <div id="bookPriceBox" class="col-2">
-                    <p><strong>FREE Shipping Available</strong></p>
-                    <p><strong>Paperback</strong></h4>
-                    <h4><strong>$8.99</strong></h4>
-                    <div class="addToCart boxShadow"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</div>
-                </div>
             </div>
 
-            <div id="relatedBooksBox">
-                <div>
-                    <h4><strong>Related Books</strong></h4>
-                </div>
-                <div id="bookWrapper">
-                    <div class="bookDiv"><a href="book-info-page.html"><img src="res/books/freefall.jpg" /></a></div>
-                    <div class="bookDiv"><a href="book-info-page.html"><img src="res/books/closer.jpg" /></a></div>
-                    <div class="bookDiv"><a href="book-info-page.html"><img src="res/books/maze-runner.jpg" /></a></div>
-                    <div class="bookDiv"><a href="book-info-page.html"><img src="res/books/hunger-games.jpg" /></a></div>
-                </div>
-
-            </div>
 
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script type="text/javascript">
-
-        toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-bottom-center",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
-
-        var cartItems = 0;
-
-        $(".addToCart").click(function() {
-            toastr["success"]("This book has been added to your cart.", "Success!");
-            cartItems++;
-            var html = $("#cartContent").html();
-            $("#cartContent").text("test");
-        })
 
 
         </script>
