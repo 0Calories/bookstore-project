@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+        <meta charset="UTF-8">
+        <title>My Cart</title>
+
+        <style type="text/css">
+
+            #cartContainer {
+                margin-top: 40px;
+                margin-left: 40px;
+            }
+
+            #checkoutContainer {
+                margin-top: 40px;
+                margin-left: 40px;
+                text-align: center;
+                height: 50%;
+            }
+
+            #checkoutContainer a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .cartItem {
+                border-top: 1px solid #b7b7b7;
+                overflow: auto;
+            }
+
+            .itemImage {
+                margin: 20px 0px 20px 20px;
+                width: 100px;
+                height: 150px;
+                float: left;
+            }
+
+            .bookImage {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            .itemDetails {
+                margin: 20px 20px;
+                margin-left: 100px;
+            }
+
+            .priceDiv {
+                margin-left: 60px;
+            }
+
+            .quantityPicker {
+                float: left;
+                border-radius: 4px;
+                padding: 5px;
+                border-color: #b7b7b7;
+                height: 40px;
+                background: #ededed;
+                color: #8c8c8c;
+                margin-left: 20px;
+            }
+
+            .quantityPicker:hover {
+                background: #d8d8d8;
+                cursor: pointer;
+            }
+
+            .lineSeparator {
+                border-top: 1px solid #b7b7b7;
+                width: 100%;
+            }
+
+            .checkoutButton {
+                background: #FE5252;
+                -webkit-border-radius: 4;
+                -moz-border-radius: 4;
+                border-radius: 4px;
+                margin: 0 auto;
+                font-weight: bold;
+                text-align: center;
+                padding: 8px;
+            }
+
+            .checkoutButton:hover {
+                background: #ff3838;
+                cursor: pointer;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="pageHeader" class="container-fluid">
+
+            <div id="headerContent" class="row justify-content-start">
+
+                <div id="logoWrapper" style="cursor: pointer;" onclick="window.location='index.html';">
+                    <span class="text-nowrap">
+                        <div id="logoContainer">
+                            <img src="res/owl-logo-white.png" class="fittedImage" />
+                        </div>
+                        <div id="logoTextContainer" class="clearfix" style="cursor: pointer;">OWL</div>
+                    </span>
+                </div>
+
+
+                <form id="searchContainer" class="form-inline" action="index.html">
+                    <div class="form-group" style="width: 100%">
+                        <div class="input-group" style="width: 100%">
+                            <select id="searchCategory">
+                                <option value="title" class="categoryOption">Title</option>
+                                <option value="keyword" class="categoryOption">Keyword</option>
+                                <option value="author" class="categoryOption">Author</option>
+                            </select>
+                            <input id="searchBar" class="form-control" type="text" />
+                            <span class="input-group-btn">
+                                <button type="submit" id="searchButton"><img src="res/mag-icon-small.png" class="fittedImage" /></button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div id="headerRight" class="row">
+                    <div>
+                        <p class="headerRightItem">Sign In</p>
+                    </div>
+                    <div>
+                        <p class="headerRightItem">My Account</p>
+                    </div>
+                    <div>
+                        <p class="headerRightItem" ><a href="cart-page.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="categoriesContainer">
+                <span class="categoryLink">Fiction</span>
+                <span class="categoryLink">Non-Fiction</span>
+                <span class="categoryLink">Science</span>
+                <span class="categoryLink">Health</span>
+                <span class="categoryLink">Kids</span>
+                <span class="categoryLink">Teens</span>
+            </div>
+
+        </div>
+
+        <div id="bookContainer" class="container-fluid">
+            <div class="row">
+                <div id="cartContainer" class="cardContainer col-8">
+                    <h4><strong>My Cart</strong></h4>
+                    <div id="itemsContainer">
+
+                        <div class="cartItem">
+                            <div class="itemImage boxShadow"><img class="bookImage" src="res/books/tunnels.jpg" /></div>
+                            <div class="itemDetails row">
+                                <ul style="list-style: none;" class="col-4">
+                                    <li><h4><strong>Tunnels</strong></h4></li>
+                                    <li>by <i>Roderick Gordon, Brian Williams</i></li>
+                                </ul>
+                                <div class="priceDiv col-4">
+                                    <h4><strong>$8.99</strong></h4>
+                                </div>
+                                <div class="quantityDiv col-2">
+                                    <h4><strong>Quantity: </strong></h4>
+                                    <select class="quantityPicker">
+                                        <option value="title" class="categoryOption">1</option>
+                                        <option value="keyword" class="categoryOption">2</option>
+                                        <option value="author" class="categoryOption">3</option>
+                                        <option value="title" class="categoryOption">4</option>
+                                        <option value="keyword" class="categoryOption">5</option>
+                                        <option value="author" class="categoryOption">6</option>
+                                        <option value="author" class="categoryOption">7</option>
+                                        <option value="author" class="categoryOption">8</option>
+                                        <option value="author" class="categoryOption">9</option>
+                                        <option value="author" class="categoryOption">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cartItem">
+                            <div class="itemImage boxShadow"><img class="bookImage" src="res/books/astrophysics.jpg" /></div>
+                            <div class="itemDetails row">
+                                <ul style="list-style: none;" class="col-4">
+                                    <li><h4><strong>Astrophysics for People in a Hurry</strong></h4></li>
+                                    <li>by <i>Neil deGrasse Tyson</i></li>
+                                </ul>
+                                <div class="priceDiv col-4">
+                                    <h4><strong>$14.99</strong></h4>
+                                </div>
+                                <div class="quantityDiv col-2">
+                                    <h4><strong>Quantity: </strong></h4>
+                                    <select class="quantityPicker">
+                                        <option value="title" class="categoryOption">1</option>
+                                        <option value="keyword" class="categoryOption">2</option>
+                                        <option value="author" class="categoryOption">3</option>
+                                        <option value="title" class="categoryOption">4</option>
+                                        <option value="keyword" class="categoryOption">5</option>
+                                        <option value="author" class="categoryOption">6</option>
+                                        <option value="author" class="categoryOption">7</option>
+                                        <option value="author" class="categoryOption">8</option>
+                                        <option value="author" class="categoryOption">9</option>
+                                        <option value="author" class="categoryOption">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cartItem">
+                            <div class="itemImage boxShadow"><img class="bookImage" src="res/books/maze-runner.jpg" /></div>
+                            <div class="itemDetails row">
+                                <ul style="list-style: none;" class="col-4">
+                                    <li><h4><strong>The Maze Runner</strong></h4></li>
+                                    <li>by <i>James Dashner</i></li>
+                                </ul>
+                                <div class="priceDiv col-4">
+                                    <h4><strong>$7.99</strong></h4>
+                                </div>
+                                <div class="quantityDiv col-2">
+                                    <h4><strong>Quantity: </strong></h4>
+                                    <select class="quantityPicker">
+                                        <option value="title" class="categoryOption">1</option>
+                                        <option value="keyword" class="categoryOption">2</option>
+                                        <option value="author" class="categoryOption">3</option>
+                                        <option value="title" class="categoryOption">4</option>
+                                        <option value="keyword" class="categoryOption">5</option>
+                                        <option value="author" class="categoryOption">6</option>
+                                        <option value="author" class="categoryOption">7</option>
+                                        <option value="author" class="categoryOption">8</option>
+                                        <option value="author" class="categoryOption">9</option>
+                                        <option value="author" class="categoryOption">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="checkoutContainer" class="cardContainer col-3">
+                    <h4><strong>Order Summary</strong></h4>
+                    <div class="lineSeparator"></div>
+                    <br />
+                    <p><strong>Subtotal (3 items): <span style="color: #FE5252;">$31.97</span></strong></p>
+                    <p><strong>Estimated Shipping: <span style="color: #FE5252;">FREE</span></strong></p>
+                    <p><strong>Estimated Tax: <span style="color: #FE5252;">$0.00</span></strong></p>
+                    <div class="lineSeparator"></div>
+                    <br />
+                    <h4><strong>Total: <span style="color: #FE5252;">$31.97</span></strong></h4>
+                    <br />
+                    <a class="checkoutButton boxShadow" href="checkout-page.html">Proceed To Checkout</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+
+
+        </script>
+
+    </body>
+
+</html>
